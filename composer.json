@@ -1,0 +1,17 @@
+{
+  "name": "hoda/scrapper",
+  "authors": [
+    {
+      "name": "hoda",
+      "email": "hoda.hussin@gmail.com"
+    }
+  ],
+  "require": {
+    "simple-html-dom/simple-html-dom": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Scrapper\\": "src/"
+    }
+  }
+}
