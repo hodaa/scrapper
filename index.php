@@ -1,6 +1,6 @@
 <?php
+ini_set('memory_limit', '58048M');
 require_once __DIR__ . '/vendor/simple-html-dom/simple-html-dom/simple_html_dom.php';
-use simple_html_dom;
 function dlPage($href) {
 
     $curl = curl_init();
@@ -22,6 +22,14 @@ function dlPage($href) {
     return $dom;
 }
 
-$url = 'http://www.dev98.com/';
+$url = 'https://dev98.de/';
 $data = dlPage($url);
-print_r($data);
+foreach($data->find('img') as $element)
+    echo $element->src . '<br>';
+
+
+//$data = $data->find('div.ctr-p');
+
+//echo "<pre>";
+//print_r($data);
+//echo "</pre>";
