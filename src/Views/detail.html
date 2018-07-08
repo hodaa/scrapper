@@ -1,0 +1,25 @@
+{% include 'header.html' %}
+
+<div class="card mb-4">
+    {% if(data['news'].image) %}
+    <img class="card-img-top" src="{{data['news'].image}}" alt="Card image cap">
+    {% endif %}
+    <div class="card-body">
+        <h2 class="card-title"><a href="{{data['news'].title_url}}">{{data['news'].title |raw }}</a></h2>
+        <p class="card-text">{{data['news'].description | raw }}</p>
+    </div>
+    <div class="card-footer text-muted">
+        Posted on {{data['news'].date}} by
+        <a href="{{data['news'].author_url}}">{{data['news'].author}}</a>
+    </div>
+</div>
+
+</div>
+
+{% include 'navigation.html' %}
+
+</div>
+<!-- /.row -->
+
+</div>
+{% include 'footer.html' %}

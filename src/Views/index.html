@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+
+            {% for item in data['news'] %}
+
+            <!-- Blog Post -->
+            <div class="card mb-4">
+                {% if(item.image) %}
+                <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                {% endif %}
+                <div class="card-body">
+                    <h2 class="card-title"><a href="/more?url={{item.read_more}}">{{item.title |raw }}</a></h2>
+                    <p class="card-text">{{item.description |slice(0, 300)}}</p>
+                    <a href="/more?url={{item.read_more}}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on {{item.date}} by
+                    <a href="{{item.author_url}}">{{item.author}}</a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+            <!-- Sidebar Widgets Column -->
+
+        </div>
+      {% include 'side.html' %}
+
+    </div>
+    <!-- /.row -->
+
+</div>
+<!-- Footer -->
+{% include 'side.html' %}
+
+
